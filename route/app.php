@@ -15,3 +15,12 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+
+// 用户注册
+Route::post('register', 'User/register');
+
+// 用户登录
+Route::post('login', 'User/login');
+
+// 获取用户信息
+Route::get('user/info', 'User/getUserInfo')->middleware(\app\middleware\Auth::class);
